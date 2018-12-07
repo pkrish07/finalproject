@@ -11,7 +11,7 @@ Project Topic: Local School Supplies for Sale
 
 URL: 
 
-https://final-project-js5n6qa7v.now.sh 
+https://itemsforsale.herokuapp.com/
 
 
 ### 1. Data Format and Storage
@@ -99,8 +99,8 @@ request(options, function (error, response, body) {
 
 ### 3. View Data
 
-GET endpoint route: `/api/json`
-
+GET endpoint route: `/api/json` <-- for raw data>
+<!-- '/' --> for homepage
 ### 4. Search Data
 
 Search Field: name

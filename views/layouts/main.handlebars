@@ -24,9 +24,10 @@
     <input type="search" name="searchbar" id="searchbar" onkeyup="myFunction()">
     </div>
    
-
+    <div>
+        <h1 id="big"></h1>
         {{{body}}}
-
+    </div>
     <hr> 
     
     <form action="/api/item" method="post">
@@ -58,28 +59,54 @@
    
 
      function myFunction() {
+
+         check(); 
                
          var input; var filter;  var ul; var li; var a; var i;  var txtValue;
         input = document.getElementById("searchbar");
 
-        filter = input.value.toUpperCase();
+        f = input.value.toUpperCase();
          
         itemBlocks = document.getElementsByClassName("itemblock");
        
        
-       
+        
         for (i = 0; i < itemBlocks.length; i++) {
+           
         name = itemBlocks[i].getElementsByTagName("h2")[0].innerText;
        
-        txtValue = name; 
-        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        txt = name; 
+        if (txt.toUpperCase().indexOf(f) > -1) {
 
             itemBlocks[i].style.display = "";
         } else {
             itemBlocks[i].style.display = "none";
             }
+
+
         }
-    }     
+     
+
+    }
+
+
+    function check(){
+         itemBlocks = document.getElementsByClassName("itemblock");
+         var allFalse = true;          
+        for(var i = 0; i < itemBlocks.length; i++){
+            if(itemBlocks[i].style.display != "none"){
+                allFalse = false; 
+            }
+        }
+
+        if(allFalse){
+            $("#big").text("No items found");  
+        }else{
+            $("#big").text(""); 
+        } 
+    }
+
+
   
     </script>
 
