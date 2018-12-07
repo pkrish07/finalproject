@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/public/css/main.css">
+    
+
+    <title>For Sale Items</title>
+    
+</head>
+<body>
+    <div class ='nav'>
+
+	<h3><a href="/">All Items</a></h3>
+	<h3><a href="/items/cheapest">Cheapest</a></h3>
+	<h3><a href="/items/expensive">Expensive</a></h3>
+	<h3><a href="/items/books">Books!</a></h3>
+    <h3><a href="/items/tech">Tech!</a></h3>
+    <h3><a href="/items/tickets">Tickets!</a></h3>
+    <h3><a href="/items/posters">Posters!</a></h3>
+    <h3><a href="/items/others">Others</a></h3>
+    <h3><a href="/items/newest">Latest Item!</a></h3>
+     <h3>Search</h3>
+    <input type="search" name="searchbar" id="searchbar" onkeyup="myFunction()">
+    </div>
+   
+
+        {{{body}}}
+
+    <hr> 
+    
+    <form action="/api/item" method="post">
+        Full name:<br>
+        <input type="text" name="author"><br>
+        Name of item:<br>
+        <input type="text" name="name"><br>
+        Item Type:<br>
+            <input type="radio" name="type_of_item" value="book" checked> Book<br>
+            <input type="radio" name="type_of_item" value="ticket"> Ticket<br>
+            <input type="radio" name="type_of_item" value="poster"> Poster <br>
+            <input type="radio" name="type_of_item" value="tech"> Tech <br>
+            <input type="radio" name="type_of_item" value="other"> Other <br>
+        Class item is for (put NA if not for a specific class):<br>
+        <input type="text" name="class"><br>
+         Price:<br>      
+         <input type="number" name="price" id=""> <br>
+        Optional Description:<br>
+        <input type="text" name="description"><br>
+         <input type="submit" value="Submit">
+    </form>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+   <script id="main">
+     
+
+     
+   
+
+     function myFunction() {
+               
+         var input; var filter;  var ul; var li; var a; var i;  var txtValue;
+        input = document.getElementById("searchbar");
+
+        filter = input.value.toUpperCase();
+         
+        itemBlocks = document.getElementsByClassName("itemblock");
+       
+       
+       
+        for (i = 0; i < itemBlocks.length; i++) {
+        name = itemBlocks[i].getElementsByTagName("h2")[0].innerText;
+       
+        txtValue = name; 
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+
+            itemBlocks[i].style.display = "";
+        } else {
+            itemBlocks[i].style.display = "none";
+            }
+        }
+    }     
+  
+    </script>
+
+</body>
+</html>
+

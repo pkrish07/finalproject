@@ -1,0 +1,29 @@
+   <h1>Here is the latest item added! </h1>
+
+
+	
+	<div class="itemblock">
+	<p><h2>{{items.name}}</h2>
+		<h4>{{items.type_of_item}}</h4>
+		<h4>{{items.price}}</h4>
+		<h4>{{items.subject}}</h4>
+		<h4>{{items.class}}</h4>
+		<h4>{{items.author}}</h4>
+		<p>{{items.description}}</p>
+	</p>
+
+	<div class="comments">
+		{{#each this.comments}}
+			<h3>{{this.comment}}</h3>
+			<h6>{{this.author}}</h6>
+		{{/each}}
+	</div>
+	<form action="/item/{{this._id}}/comment" method="post">
+		  Comment:<br>
+       	 <input type="text" name="comment"><br>
+		 <input type="submit" value="Submit">
+	</form>
+
+	</div>
+
+

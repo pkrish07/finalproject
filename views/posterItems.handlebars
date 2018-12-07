@@ -1,0 +1,29 @@
+   <h1>Posters!</h1>
+
+{{#each items}}
+	
+	<div id="itemblock">
+	<p><h2>{{this.name}}</h2>
+		<h4>{{this.type_of_item}}</h4>
+		<h4>{{this.price}}</h4>
+		<h4>{{this.subject}}</h4>
+		<h4>{{this.class}}</h4>
+		<h4>{{this.author}}</h4>
+		<p>{{items.description}}</p>
+	</p>
+
+	<div id="comments">
+		{{#each this.comments}}
+			<h3>{{this.comment}}</h3>
+			<h6>{{this.author}}</h6>
+		{{/each}}
+	</div>
+	<form action="/item/{{this._id}}/comment" method="post">
+		  Comment:<br>
+       	 <input type="text" name="comment"><br>
+		 <input type="submit" value="Submit">
+	</form>
+
+	</div>
+
+{{/each}}

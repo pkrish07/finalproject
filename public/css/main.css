@@ -1,0 +1,11 @@
+/* Please add your own! */
+.nav h3{
+    display: inline-block; 
+}
+
+#itemblock {
+    border-style: solid;
+    border-width: medium;
+    display: block; 
+}
+
