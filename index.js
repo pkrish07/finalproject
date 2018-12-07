@@ -260,7 +260,7 @@ app.post('/item/:id/comment', function(req, res) {
  * endpoints for the API, and 5 others. 
  */
 
-app.listen(3000, function() {
+app.listen(process.env || 3000, function() {
 
     console.log('Items Listening on Port 3000!');
 });
